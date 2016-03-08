@@ -80,14 +80,16 @@ public class BufferedIOBenchmark {
 				LOG.log(Level.SEVERE, ex.getMessage(), ex);
 			}
 		}
-                float temps = Timer.takeTime();
+                long temps = Timer.takeTime();
 		LOG.log(Level.INFO, "  > Done in {0} ms.", temps);
                 //Appel la fonction qui écrit dans le fichier
                 recupPourStat("WRITE", ioStrategy, numberOfBytesToWrite, blockSize, temps);
                 
 	}
         
-        private void recupPourStat(String operation,IOStrategy ioStrategy,long numberOfBytesToWrite, int blockSize, float time)
+        private void recupPourStat(String operation,IOStrategy ioStrategy,
+                                   long numberOfBytesToWrite, int blockSize,
+                                   float time)
         {
             FileWriter fw = null;
             BufferedWriter os = null;
@@ -202,7 +204,7 @@ public class BufferedIOBenchmark {
 				LOG.log(Level.SEVERE, ex.getMessage(), ex);
 			}
 		}
-                float temps = Timer.takeTime();
+                long temps = Timer.takeTime();
 		LOG.log(Level.INFO, "  > Done in {0} ms.", temps);
                 
                 //Appel la fonction qui écrit dans le fichier
